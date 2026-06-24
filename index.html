@@ -1,1 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>富邦之星｜學習教案筆記</title>
+  <meta name="description" content="李孟珊業務經理富邦之星課程筆記：低標、認同、約訪、水池、社群、服務與本週行動。">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css?v=20260624">
+</head>
+<body>
+  <nav class="topbar no-print">
+    <a class="brand" href="#top">富邦之星學習頁</a>
+    <div class="nav-links">
+      <a href="#baseline">起點</a>
+      <a href="#recognition">認同</a>
+      <a href="#appointment">約訪</a>
+      <a href="#pool">水池</a>
+      <a href="#social">社群</a>
+      <a href="#setback">挫折</a>
+      <a href="#homework">作業</a>
+    </div>
+    <div class="nav-progress" aria-label="學習進度">
+      <span id="navProgressText">0%</span>
+      <i><b id="navProgressBar"></b></i>
+    </div>
+    <a class="btn btn-soft compact home-link" href="https://duduflow.github.io/learning_notes_catalog/">返回目錄</a>
+    <button class="btn btn-soft compact print-link" onclick="window.print()">列印</button>
+  </nav>
 
+  <div class="mobile-home no-print">
+    <a class="btn btn-soft" href="https://duduflow.github.io/learning_notes_catalog/">返回學習目錄</a>
+  </div>
+
+  <div class="mobile-jump no-print" aria-label="手機快速導覽">
+    <a href="#baseline">起點</a>
+    <a href="#recognition">認同</a>
+    <a href="#pool">水池</a>
+    <a href="#homework">作業</a>
+  </div>
+
+  <header id="top" class="hero">
+    <img src="assets/fubon-star-hero.png" alt="富邦之星活動量與成長曲線原創視覺" class="hero-bg">
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">訓練組課程｜李孟珊業務經理</p>
+      <h1>富邦之星不是獎項，<br>是把低標做成習慣。</h1>
+      <p class="hero-copy">87 次富邦之星，靠的不是單月爆發，而是每月可重複的活動量：認同、約訪、服務、社群與水池經營。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#baseline">開始建立活動量系統</a>
+        <a class="btn btn-light" href="#homework">直接填寫作業</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="progress" class="section tight">
+      <div class="wrap">
+        <div class="dashboard">
+          <div>
+            <p class="label">學習完成度</p>
+            <h2>把課程變成本週行動。</h2>
+            <p>完成 7 個練習後，匯出你的富邦之星行動稿。</p>
+          </div>
+          <div class="progress-box">
+            <div class="progress-head">
+              <strong id="progressText">0%</strong>
+              <button class="btn btn-primary" onclick="exportPlan()">匯出作業</button>
+            </div>
+            <div class="progress-track"><b id="progressBar"></b></div>
+            <div id="progressList" class="progress-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="baseline" class="section" data-step="baseline">
+      <div class="wrap split">
+        <div class="section-lead">
+          <p class="label">一、低標先立住</p>
+          <h2>15C、12 件，不是能力上限，是起點。</h2>
+          <p>第一年低標不是故事包裝，而是提醒：辛苦可以被理解，不能成為停下來的理由。</p>
+          <blockquote>先面對理由，才有行動。</blockquote>
+        </div>
+        <div class="grid two">
+          <article class="card">
+            <span class="num">15C</span>
+            <h3>看見起點</h3>
+            <p>先承認現況，再調整打法。</p>
+          </article>
+          <article class="card">
+            <span class="num">87</span>
+            <h3>追的是連續性</h3>
+            <p>富邦之星考驗每月活動量。</p>
+          </article>
+          <article class="card">
+            <span class="num">低標</span>
+            <h3>把標準固定</h3>
+            <p>低標不是天花板，是最低動作量。</p>
+          </article>
+          <article class="card">
+            <span class="num">藉口</span>
+            <h3>少說合理化</h3>
+            <p>累可以休息，但不能拿來放過自己。</p>
+          </article>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="workshop">
+          <h3>我的富邦之星起點</h3>
+          <div class="form-grid">
+            <label>我現在的低標是什麼？
+              <input id="baselineGoal" class="input" placeholder="例如：每月 5C、每週 8 個有效接觸、每月 3 位新客戶">
+            </label>
+            <label>我最常拿來放過自己的理由
+              <input id="baselineExcuse" class="input" placeholder="例如：沒名單、太忙、怕尷尬、客戶不回">
+            </label>
+            <button class="btn btn-primary" onclick="buildBaseline()">整理起點</button>
+          </div>
+          <div id="baselineOutput" class="output">填寫後，這裡會把你的低標與理由轉成行動提醒。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recognition" class="section alt" data-step="recognition">
+      <div class="wrap split reverse">
+        <div class="method-panel">
+          <div class="method-card"><b>1</b><span>認同我</span><p>先相信人，才願意問問題。</p></div>
+          <div class="method-card"><b>2</b><span>認同觀念</span><p>觀念先通，商品才有位置。</p></div>
+          <div class="method-card wide"><b>3</b><span>認同保險</span><p>保險是工具，不是開場白。</p></div>
+        </div>
+        <div class="section-lead">
+          <p class="label">二、類 NPSS：名單後面不是約訪，是認同</p>
+          <h2>名單之後，先做認同。</h2>
+          <p>類 NPSS 的重點，是把名單推進到認同：認同人、認同觀念、認同保險。沒有認同，專業也容易變成推銷。</p>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="builder">
+          <div class="builder-head">
+            <h3>認同鏈檢核</h3>
+            <button class="btn btn-soft" onclick="copyText('recognitionOutput')">複製</button>
+          </div>
+          <div class="check-grid">
+            <label><input class="recognition-check" type="checkbox" value="我有讓對方知道我為什麼做保險">我有讓對方知道我為什麼做保險</label>
+            <label><input class="recognition-check" type="checkbox" value="我能把保險講成觀念，不是只講商品">我能把保險講成觀念，不是只講商品</label>
+            <label><input class="recognition-check" type="checkbox" value="我有固定出現在客戶生活裡">我有固定出現在客戶生活裡</label>
+            <label><input class="recognition-check" type="checkbox" value="我有用服務或資源讓客戶感覺被幫助">我有用服務或資源讓客戶感覺被幫助</label>
+          </div>
+          <button class="btn btn-primary" onclick="buildRecognition()">產生認同提醒</button>
+          <div id="recognitionOutput" class="output">勾選後，這裡會整理你的認同鏈缺口。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="appointment" class="section" data-step="appointment">
+      <div class="wrap split">
+        <div class="section-lead">
+          <p class="label">三、約訪不尷尬</p>
+          <h2>先講目的，才不尷尬。</h2>
+          <p>約問卷就做問卷，約健診就做健診。目的清楚，對方才有安全感。</p>
+          <blockquote>不要只對業務有利，也要讓對方有收穫。</blockquote>
+        </div>
+        <div class="habit-card">
+          <h3>接觸方式設計器</h3>
+          <label>我要接觸的人
+            <input id="contactPerson" class="input" placeholder="例如：高中同學、牌友、車險客戶、信用卡朋友">
+          </label>
+          <label>我準備用什麼理由約
+            <select id="contactReason" class="input">
+              <option>信用卡</option>
+              <option>問卷</option>
+              <option>保單健診</option>
+              <option>車險／產險服務</option>
+              <option>吃飯聊天</option>
+              <option>社群互動</option>
+            </select>
+          </label>
+          <label>對方可以得到什麼
+            <input id="contactBenefit" class="input" placeholder="例如：整理財務狀況、確認保障缺口、車禍處理有人幫忙">
+          </label>
+          <button class="btn btn-primary" onclick="buildAppointment()">產生邀約稿</button>
+          <div id="appointmentOutput" class="output subtle">填完後，這裡會產生一段不尷尬的邀約稿。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pool" class="section alt" data-step="pool">
+      <div class="wrap">
+        <div class="center-head">
+          <p class="label">四、名單水池</p>
+          <h2>名單水池，要自己設計。</h2>
+          <p>信用卡、產險、車險、節日、喜好與服務，都是接觸入口。每個月有主題，名單才會流動。</p>
+        </div>
+        <div class="pool-grid">
+          <article><b>信用卡</b><span>信任起點，也能延伸財務話題。</span></article>
+          <article><b>產險車險</b><span>服務不是麻煩，是見面機會。</span></article>
+          <article><b>吃喝玩樂</b><span>自然聊天，也要連回需求。</span></article>
+          <article><b>每月主題</b><span>節日、生日、職業，都能成為接觸理由。</span></article>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="builder">
+          <div class="builder-head">
+            <h3>12 個月水池規劃</h3>
+            <button class="btn btn-soft" onclick="buildPool()">整理水池</button>
+          </div>
+          <div class="month-grid">
+            <label>本月主題<input id="monthTheme" class="input" placeholder="例如：情人節、端午、感恩節、車險總盤點"></label>
+            <label>適合接觸誰<input id="monthTarget" class="input" placeholder="例如：遠距離情侶、車主、年輕投資族、老客戶"></label>
+            <label>我可以提供什麼價值<input id="monthValue" class="input" placeholder="例如：客製小禮、車險檢視、保障先於投資提醒"></label>
+          </div>
+          <div id="poolOutput" class="output">填寫後，這裡會產生本月水池行動。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="social" class="section" data-step="social">
+      <div class="wrap split reverse">
+        <div class="social-panel">
+          <h3>社群要有立場</h3>
+          <p>轉發不是經營。把事件寫成你的觀點，才會吸引認同你的人。</p>
+          <ul>
+            <li>少恐嚇，多觀點。</li>
+            <li>少照抄，多自己的話。</li>
+            <li>讓客戶看見你在工作。</li>
+            <li>穩定曝光，累積記憶點。</li>
+          </ul>
+        </div>
+        <div class="section-lead">
+          <p class="label">五、客戶心中的位置</p>
+          <h2>讓客戶遇事想到你。</h2>
+          <p>社群與服務，是你在客戶心中的定位。平常有輸出，關鍵時刻才會被想起。</p>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="workshop">
+          <h3>社群貼文練習</h3>
+          <div class="form-grid">
+            <label>我想發的事件或新聞
+              <input id="socialTopic" class="input" placeholder="例如：急診理賠新聞、投資市場波動、朋友車禍、長照議題">
+            </label>
+            <label>我的立場或感受
+              <input id="socialView" class="input" placeholder="例如：風險不是等發生才處理；錢要先守住才能投資">
+            </label>
+            <button class="btn btn-primary" onclick="buildSocial()">產生貼文草稿</button>
+          </div>
+          <div id="socialOutput" class="output">填寫後，這裡會產生一段有立場、不恐嚇的社群草稿。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="setback" class="section alt" data-step="setback">
+      <div class="wrap split">
+        <div class="section-lead">
+          <p class="label">六、挫折復原</p>
+          <h2>有挫折，也要有下一步。</h2>
+          <p>撤件、住院、月底差一點，都會發生。重點不是不難過，而是別停太久。</p>
+          <blockquote>休息就休息；工作就做下一步。</blockquote>
+        </div>
+        <div class="recovery-card">
+          <h3>挫折復原表</h3>
+          <label>我現在遇到的挫折
+            <textarea id="setbackNow" class="input" placeholder="例如：客戶撤件、沒回訊息、家人不支持、身體狀況、月底差一點"></textarea>
+          </label>
+          <label>我下一個可控制動作
+            <input id="setbackAction" class="input" placeholder="例如：今天再約 2 位、改用產險服務切入、先整理 10 位車主">
+          </label>
+          <button class="btn btn-primary" onclick="buildSetback()">整理復原策略</button>
+          <div id="setbackOutput" class="output subtle">填寫後，這裡會把挫折轉成下一個可控制動作。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="section">
+      <div class="wrap">
+        <div class="center-head">
+          <p class="label">七、團隊複利</p>
+          <h2>團隊看的是你的背影。</h2>
+          <p>主管做什麼，夥伴就學什麼。穩定低標、服務生根、團隊複利，會形成文化。</p>
+        </div>
+        <div class="quote-wall">
+          <article><h3>個人行銷</h3><p>自己先有低標，才帶得出方法。</p></article>
+          <article><h3>服務生根</h3><p>長期服務，才會有加保與轉介紹。</p></article>
+          <article><h3>團隊複利</h3><p>當夥伴也穩定，文化才會長出來。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="homework" class="section dark" data-step="homework">
+      <div class="wrap">
+        <div class="center-head">
+          <p class="label dark-label">課後行動稿</p>
+          <h2>寫下本週 3 個動作。</h2>
+          <p>把認同、約訪、水池、社群與挫折復原，落成一週內能做的事。</p>
+        </div>
+        <div class="lesson-grid">
+          <label>本週富邦之星低標<textarea id="finalStandard" class="input dark-input" placeholder="例如：本週 8 個有效接觸、3 個約訪、2 件服務或產險切入"></textarea></label>
+          <label>我要立刻接觸的 5 個人<textarea id="finalPeople" class="input dark-input" placeholder="列出名字、關係、適合的接觸方式"></textarea></label>
+          <label>我本週最重要的提醒<textarea id="finalReminder" class="input dark-input" placeholder="例如：約什麼做什麼；先讓客戶認同我，再談商品"></textarea></label>
+        </div>
+        <div class="lesson-actions">
+          <button class="btn btn-light" onclick="buildFinalPlan()">生成行動稿</button>
+          <button class="btn btn-outline" onclick="copyText('finalOutput')">複製行動稿</button>
+          <button class="btn btn-outline" onclick="resetAll()">重新開始</button>
+        </div>
+        <div id="finalOutput" class="final-output">完成上方欄位後，這裡會生成一份可帶回去執行的富邦之星行動稿。</div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast no-print" role="status" aria-live="polite"></div>
+  <script src="js/main.js?v=20260624"></script>
+</body>
+</html>
